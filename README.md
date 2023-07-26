@@ -1,7 +1,3 @@
-<p align='center'>
-  <img src='https://cdn.jsdelivr.net/gh/pinky-pig/pic-bed/imageswindow%20scene.gif' alt='Plane Window Scene' width='600'/>
-</p>
-
 ## Features
 
 - [ ] 设置 N

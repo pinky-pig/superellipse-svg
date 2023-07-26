@@ -10,7 +10,9 @@
     >
 
     <div class="grid h-40px w-40px place-items-center">
-      <div i-carbon-logo-github class="h-24px w-24px" />
+      <a href="https://github.com/pinky-pig/superellipse-svg" target="_blank">
+        <div i-carbon-logo-github class="h-24px w-24px" />
+      </a>
     </div>
   </div>
 </template>
