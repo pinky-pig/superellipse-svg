@@ -48,7 +48,7 @@ function isTransparent(color: string) {
         />
       </div>
     </div>
-    <input ref="inputRef" v-model="currentColor" class="invisible absolute top-0 -left-55px -z-1" type="color">
+    <input ref="inputRef" v-model="currentColor" class="invisible absolute top-4 -left-55px -z-1" type="color">
   </div>
 </template>
 

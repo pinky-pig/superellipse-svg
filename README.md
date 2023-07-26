@@ -8,3 +8,11 @@
 - [ ] 导出 SVG
 - [ ] CSS Background
 - [ ] 完成彩带效果
+
+
+todo
+
+- 基础功能
+- range 数字
+- 彩带
+- color
