@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { downloadSVG, getSVGCode } from '~/utils/svg'
+
 const currentStrokeColor = ref('#7e7f9a')
 const currentFillColor = ref('#7e7f9a')
 const currentCurvatureX = ref(3)
@@ -12,6 +14,13 @@ provide('currentCurvatureX', currentCurvatureX)
 provide('currentCurvatureY', currentCurvatureY)
 provide('currentRotate', currentRotate)
 provide('currentStrokeWidth', currentStrokeWidth)
+
+function exportSvg() {
+  downloadSVG('superellipse', 'superellipse.svg')
+}
+function previewSvg() {
+  getSVGCode('superellipse')
+}
 </script>
 
 <template>
@@ -26,6 +35,8 @@ provide('currentStrokeWidth', currentStrokeWidth)
           />
           <Tools
             class="mt-5rem"
+            @export-svg="exportSvg"
+            @preview-svg="previewSvg"
           />
         </div>
         <div class="p-4">

@@ -9,7 +9,7 @@ const currentStrokeWidth = inject('currentStrokeWidth') as Ref<number>
 const strokePresetColor = ['#fff', '#CAE7B9', '#f3de8a', '#eb9486', '#7e7f9a', '#97a7b3', '#F4E8C100', '#000000']
 const fillPresetColor = ['#fff', '#e7e6f7', '#e3d0d8', '#aea3b0', '#827081', '#c6d2ed', '#F4E8C100', '#000000']
 
-const isLockedXY = ref(false)
+const isLockedXY = ref(true)
 const curvature = ref(currentCurvatureX)
 watch(curvature, () => {
   currentCurvatureX.value = curvature.value
