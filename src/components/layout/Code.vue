@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import Modal from '~/components/ui/Modal.vue'
+
+// import { getResults } from '~/utils/encodeSvg'
 import { getSVGCode } from '~/utils/svg'
 
 const $modal = ref<typeof Modal | null>(null)
@@ -16,8 +18,12 @@ defineExpose({
 })
 
 const code = ref('')
+const backgroundImage = ref('unset')
 function render() {
   code.value = getSVGCode('superellipse')
+
+  // backgroundImage.value = getResults(code.value).resultCss
+  // console.log(backgroundImage.value)
 }
 </script>
 
@@ -27,6 +33,13 @@ function render() {
       <div class="flex flex-row items-center justify-between">
         <span class="h-16 font-bold leading-16 text-[#A4B2C1]">SVG Code</span>
         <div class="cursor-pointer font-bold text-[#A4B2C1] hover:bg-white" i-carbon-close @click="close" />
+      </div>
+
+      <div
+        class="preview-demo h-150px bg-no-repeat"
+        :style="{ backgroundImage: `${backgroundImage}` }"
+      >
+        Superellipse
       </div>
 
       <div class="h-full overflow-auto rounded-[0.8rem] bg-[#1d2026] py-4 text-[#A4B2C1]">
