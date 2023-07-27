@@ -12,14 +12,16 @@
     "postinstall": "npx simple-git-hooks"
   },
   "dependencies": {
-    "@iconify-json/fluent-emoji": "^1.1.13",
     "@vueuse/core": "^10.1.2",
+    "canvas-confetti": "^1.6.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.5",
     "@iconify-json/carbon": "^1.1.17",
+    "@iconify-json/fluent-emoji": "^1.1.13",
+    "@types/canvas-confetti": "^1.6.0",
     "@types/node": "^20.2.5",
     "@unocss/eslint-config": "^0.53.0",
     "@unocss/reset": "^0.53.0",

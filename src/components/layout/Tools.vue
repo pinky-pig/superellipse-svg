@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const emit = defineEmits([
   'export-svg',
-  'preview-svg',
-  'preview-css-mask',
+  'copy-svg',
+  'preview-css',
 ])
 
 interface IBtn {
   label: string
-  emit: 'export-svg' | 'preview-svg' | 'preview-css-mask'
+  emit: 'export-svg' | 'copy-svg' | 'preview-css'
 }
 const btns = ref<IBtn[]>([
   {
@@ -15,12 +15,12 @@ const btns = ref<IBtn[]>([
     emit: 'export-svg',
   },
   {
-    label: '预览 SVG',
-    emit: 'preview-svg',
+    label: '拷贝 SVG',
+    emit: 'copy-svg',
   },
   {
     label: '预览 CSS',
-    emit: 'preview-css-mask',
+    emit: 'preview-css',
   },
 ])
 </script>
