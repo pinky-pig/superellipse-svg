@@ -56,13 +56,13 @@ function previewCSS() {
   <Suspense>
     <div class="fixed bottom-0 left-0 right-0 top-0 h-full w-full flex flex-col overflow-auto">
       <Header />
-      <div class="flex flex-1">
+      <div class="main-content-layout flex flex-1">
         <div class="flex flex-1 flex-col items-center justify-center">
           <Preview
             class="h-280px w-280px flex-shrink-0"
           />
           <Tools
-            class="mt-5rem"
+            class="mt-2rem md:mt-5rem"
             @export-svg="exportSvg"
             @copy-svg="copySVG"
             @preview-css="previewCSS"
@@ -80,5 +80,13 @@ function previewCSS() {
 </template>
 
 <style scoped>
-
+.main-content-layout {
+  flex-direction: row;
+}
+@media screen and (max-width: 768px) {
+  .main-content-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 </style>
