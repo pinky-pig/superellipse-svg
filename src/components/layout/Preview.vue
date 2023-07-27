@@ -3,6 +3,8 @@ const currentStrokeColor = inject('currentStrokeColor') as Ref<string>
 const currentFillColor = inject('currentFillColor') as Ref<string>
 const currentCurvatureX = inject('currentCurvatureX') as Ref<number>
 const currentCurvatureY = inject('currentCurvatureY') as Ref<number>
+const currentRotate = inject('currentRotate') as Ref<number>
+const currentStrokeWidth = inject('currentStrokeWidth') as Ref<number>
 
 // 1. 路径及其视口大小
 const pathString = ref('')
@@ -59,6 +61,10 @@ async function getSuperellipsePath(
     :viewBox="`${svgViewbox.x} ${svgViewbox.y} ${svgViewbox.width} ${svgViewbox.height}`"
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
+    :style="{
+      transform: `rotate(${currentRotate}deg)`,
+      strokeWidth: `${currentStrokeWidth}px`,
+    }"
   >
     <path
       ref="$path"

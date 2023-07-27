@@ -3,6 +3,8 @@ const currentStrokeColor = inject('currentStrokeColor') as Ref<string>
 const currentFillColor = inject('currentFillColor') as Ref<string>
 const currentCurvatureX = inject('currentCurvatureX') as Ref<number>
 const currentCurvatureY = inject('currentCurvatureY') as Ref<number>
+const currentRotate = inject('currentRotate') as Ref<number>
+const currentStrokeWidth = inject('currentStrokeWidth') as Ref<number>
 
 const strokePresetColor = ['#fff', '#CAE7B9', '#f3de8a', '#eb9486', '#7e7f9a', '#97a7b3', '#F4E8C100', '#000000']
 const fillPresetColor = ['#fff', '#e7e6f7', '#e3d0d8', '#aea3b0', '#827081', '#c6d2ed', '#F4E8C100', '#000000']
@@ -49,14 +51,24 @@ const fillPresetColor = ['#fff', '#e7e6f7', '#e3d0d8', '#aea3b0', '#827081', '#c
       />
     </div>
     <div>
-      <RangeBar>
+      <RangeBar
+        v-model:value="currentStrokeWidth"
+        :min="0"
+        :max="5"
+        :step="0.1"
+      >
         <template #title>
           <span class="mb-.25rem text-16px font-bold">描边宽度</span>
         </template>
       </RangeBar>
     </div>
     <div>
-      <RangeBar>
+      <RangeBar
+        v-model:value="currentRotate"
+        :min="0"
+        :max="360"
+        :step="1"
+      >
         <template #title>
           <span class="mb-.25rem text-16px font-bold">旋转角度</span>
         </template>

@@ -1,13 +1,17 @@
 <script setup lang="ts">
 const currentStrokeColor = ref('#7e7f9a')
 const currentFillColor = ref('#7e7f9a')
-const currentCurvatureX = ref(4)
-const currentCurvatureY = ref(4)
+const currentCurvatureX = ref(3)
+const currentCurvatureY = ref(3)
+const currentRotate = ref(0)
+const currentStrokeWidth = ref(0.5)
 
 provide('currentStrokeColor', currentStrokeColor)
 provide('currentFillColor', currentFillColor)
 provide('currentCurvatureX', currentCurvatureX)
 provide('currentCurvatureY', currentCurvatureY)
+provide('currentRotate', currentRotate)
+provide('currentStrokeWidth', currentStrokeWidth)
 </script>
 
 <template>
