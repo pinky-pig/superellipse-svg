@@ -24,9 +24,15 @@ const initial = [
 // 只要改变这个值，就会触发重新渲染
 const isRerenderFlag = ref(0)
 function printf(e: any) {
-  // eslint-disable-next-line no-console
-  console.log(e.detail, '重新渲染后的数据')
+  // console.log(e.detail, '重新渲染后的数据')
 }
+
+onMounted(() => {
+  document.addEventListener('keydown', (event) => {
+    if (event.key === ' ')
+      isRerenderFlag.value = (isRerenderFlag.value + 1) % 11
+  })
+})
 </script>
 
 <template>
