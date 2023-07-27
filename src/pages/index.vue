@@ -1,4 +1,13 @@
 <script setup lang="ts">
+const currentStrokeColor = ref('#7e7f9a')
+const currentFillColor = ref('#7e7f9a')
+const currentCurvatureX = ref(4)
+const currentCurvatureY = ref(4)
+
+provide('currentStrokeColor', currentStrokeColor)
+provide('currentFillColor', currentFillColor)
+provide('currentCurvatureX', currentCurvatureX)
+provide('currentCurvatureY', currentCurvatureY)
 </script>
 
 <template>
@@ -8,8 +17,12 @@
       <Header />
       <div class="flex flex-1">
         <div class="flex flex-1 flex-col items-center justify-center">
-          <Preview class="h-280px w-280px flex-shrink-0" />
-          <Tools class="mt-5rem" />
+          <Preview
+            class="h-280px w-280px flex-shrink-0"
+          />
+          <Tools
+            class="mt-5rem"
+          />
         </div>
         <div class="p-4">
           <Options />

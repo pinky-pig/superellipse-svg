@@ -1,19 +1,37 @@
 <script setup lang="ts">
-const pathString = ref('')
+const currentStrokeColor = inject('currentStrokeColor') as Ref<string>
+const currentFillColor = inject('currentFillColor') as Ref<string>
+const currentCurvatureX = inject('currentCurvatureX') as Ref<number>
+const currentCurvatureY = inject('currentCurvatureY') as Ref<number>
 
-// 绘制超椭圆的路径
-pathString.value = await getSuperellipsePath()
+// 1. 路径及其视口大小
+const pathString = ref('')
 const $path = ref<SVGPathElement | null>(null)
 const svgViewbox = ref({ x: 0, y: 0, width: 200, height: 200 })
+
+// 2. 绘制超椭圆的路径
+pathString.value = await getSuperellipsePath(50, 50, currentCurvatureX.value, currentCurvatureY.value, 360)
+
+// 3. 计算视口大小
 onMounted(() => {
-  const bbox = $path.value!.getBBox()
-  svgViewbox.value = {
+  svgViewbox.value = getViewbox($path.value!)
+})
+
+// 3. 监听曲率变化，重新绘制超椭圆
+watch([currentCurvatureX, currentCurvatureY], async () => {
+  pathString.value = await getSuperellipsePath(50, 50, currentCurvatureX.value, currentCurvatureY.value, 360)
+  svgViewbox.value = getViewbox($path.value!)
+})
+
+function getViewbox(path: SVGPathElement) {
+  const bbox = path.getBBox()
+  return {
     x: bbox.x,
     y: bbox.y,
     width: bbox.width,
     height: bbox.height,
   }
-})
+}
 async function getSuperellipsePath(
   a = 50, // X 轴半径
   b = 50, // Y 轴半径
@@ -45,7 +63,8 @@ async function getSuperellipsePath(
     <path
       ref="$path"
       :d="pathString"
-      fill="currentColor"
+      :stroke="currentStrokeColor"
+      :fill="currentFillColor"
     />
   </svg>
 </template>
