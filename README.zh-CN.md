@@ -1,7 +1,19 @@
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/11247099/111864893-a457fd00-899e-11eb-9f05-f4b88987541d.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/pinky-pig/pic-bed/images20230727161358.png" width="600"/>
 </p>
 
+
 <h6 align='center'>
-<a href="https://vitesse-lite.netlify.app/">在线 Demo</a>
+  <a href="https://superellipse.mmeme.me/">Online Demo</a>
 </h6>
+
+## Features
+
+- [√] Curvature N
+- [√] Stroke fill color
+- [√] Stroke width
+- [√] Rotate
+- [√] SVG code
+- [√] Export SVG
+- [√] Confetti
+- [×] CSS Background Code
