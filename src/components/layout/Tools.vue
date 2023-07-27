@@ -28,7 +28,10 @@ const btns = ref<IBtn[]>([
 <template>
   <div class="h-80px w-full flex flex-row items-center justify-center gap-4 text-14px">
     <div v-for="(item, index) in btns" :key="index">
-      <button @click="emit(item.emit)">
+      <button
+        class="btn"
+        @click="emit(item.emit)"
+      >
         {{ item.label }}
       </button>
     </div>
@@ -36,8 +39,7 @@ const btns = ref<IBtn[]>([
 </template>
 
 <style scoped>
-button{
-  position: relative;
+/* button{
   min-width: 6rem;
   height: 2.5rem;
   padding: 0 1rem;
@@ -52,5 +54,5 @@ button{
 }
 button:hover{
   color: #c2ccd6;
-}
+} */
 </style>

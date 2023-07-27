@@ -12,6 +12,7 @@
     "postinstall": "npx simple-git-hooks"
   },
   "dependencies": {
+    "@iconify-json/fluent-emoji": "^1.1.13",
     "@vueuse/core": "^10.1.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2"
