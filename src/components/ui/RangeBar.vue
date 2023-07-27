@@ -6,7 +6,7 @@ const props = defineProps({
   min: {
     default: 0,
   },
-  steps: {
+  step: {
     default: 0.1,
   },
   value: {
@@ -25,7 +25,20 @@ watch(value, (val) => {
 </script>
 
 <template>
-  <input v-model="value" class="range-bar" type="range">
+  <div class="">
+    <div class="flex flex-row">
+      <slot name="title" />
+      <span class="ml-auto">{{ value }}</span>
+    </div>
+    <input
+      v-model="value"
+      :min="min"
+      :max="max"
+      :step="step"
+      class="range-bar"
+      type="range"
+    >
+  </div>
 </template>
 
 <style scoped>
@@ -37,7 +50,6 @@ watch(value, (val) => {
   -webkit-appearance: none;
   /*清除系统默认样式*/
   height: 3px;
-  /*横条的高度*/
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -49,6 +61,13 @@ input[type="range"]::-webkit-slider-thumb {
     0 3px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   -webkit-appearance: none;
-  border: 0;
+  outline: 0 solid #6967fe90;
+  transition: outline .2s ease-out;
+}
+input[type="range"]::-webkit-slider-thumb:hover{
+  outline: 4px solid #6967fe90;
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: 4px solid #6967fe90;
 }
 </style>
