@@ -29,7 +29,7 @@ function render() {
         <div class="cursor-pointer font-bold text-[#A4B2C1] hover:bg-white" i-carbon-close @click="close" />
       </div>
 
-      <div class="h-full overflow-auto rounded-[0.8rem] bg-[#1d2026] py-4">
+      <div class="h-full overflow-auto rounded-[0.8rem] bg-[#1d2026] py-4 text-[#A4B2C1]">
         {{ code }}
       </div>
     </div>

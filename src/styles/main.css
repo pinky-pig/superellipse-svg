@@ -9,3 +9,37 @@ body,
 html.dark {
   background: #121212;
 }
+
+
+/* 滚动条样式 */
+::-webkit-scrollbar{
+  width:6px;
+  height:6px;
+  background-color: transparent;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track-piece{
+  width:24px;
+  background-color:transparent;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:vertical{
+  width:24px;
+  height:24px;
+  background: rgba(214, 212, 212,.3);
+  border-radius: 8px;
+  border: 1px solid var(--scrollbar-color);
+}
+::-webkit-scrollbar-thumb:horizontal{
+  width:24px;
+  height:24px;
+  background: rgba(214, 212, 212,.3);
+  border-radius: 8px;
+  border: 1px solid var(--scrollbar-color);
+}
+::-webkit-scrollbar-button{
+  display:none;
+}
+::-webkit-scrollbar-corner{
+  display:none;
+}
