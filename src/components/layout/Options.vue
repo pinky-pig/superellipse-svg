@@ -35,7 +35,7 @@ watch(isLockedXY, (v) => {
     <div v-if="isLockedXY">
       <RangeBar
         v-model:value="curvature"
-        :min="0.03"
+        :min="0.28"
         :max="10"
         :step="0.01"
       >
@@ -48,7 +48,7 @@ watch(isLockedXY, (v) => {
     <div v-if="!isLockedXY">
       <RangeBar
         v-model:value="currentCurvatureX"
-        :min="0.03"
+        :min="0.28"
         :max="10"
         :step="0.01"
       >
@@ -60,7 +60,7 @@ watch(isLockedXY, (v) => {
     <div v-if="!isLockedXY">
       <RangeBar
         v-model:value="currentCurvatureY"
-        :min="0.03"
+        :min="0.28"
         :max="10"
         :step="0.01"
       >

@@ -3,7 +3,7 @@
   "packageManager": "pnpm@8.6.0",
   "scripts": {
     "build": "vite build",
-    "dev": "vite --port 1213 --open",
+    "dev": "vite --port 1213 --open --host",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
