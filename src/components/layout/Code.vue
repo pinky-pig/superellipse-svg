@@ -41,19 +41,15 @@ function render() {
         :style="cssStyle"
       />
 
-      <div>
-        <span class="h-12 font-bold leading-12 text-[#A4B2C1]">CSS</span>
-        <div class="h-180px overflow-auto rounded-[0.8rem] bg-[#1d2026] text-[#A4B2C1]">
-          {{ cssStyle }}
-        </div>
-      </div>
+      <TextareaCode
+        title="CSS"
+        :code="cssStyle"
+      />
 
-      <div>
-        <span class="h-12 font-bold leading-12 text-[#A4B2C1]">encoded</span>
-        <div class="h-180px overflow-auto rounded-[0.8rem] bg-[#1d2026] text-[#A4B2C1]">
-          {{ encoded }}
-        </div>
-      </div>
+      <TextareaCode
+        title="Encoded"
+        :code="encoded"
+      />
     </div>
   </Modal>
 </template>

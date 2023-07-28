@@ -17,6 +17,7 @@ declare module 'vue' {
     CSidebar: typeof import('./src/components/ui/CSidebar.vue')['default']
     GeneratorBySVG: typeof import('./src/components/GeneratorBySVG.vue')['default']
     Header: typeof import('./src/components/layout/Header.vue')['default']
+    HighlightCode: typeof import('./src/components/ui/HighlightCode.vue')['default']
     Modal: typeof import('./src/components/ui/Modal.vue')['default']
     Options: typeof import('./src/components/layout/Options.vue')['default']
     Preview: typeof import('./src/components/layout/Preview.vue')['default']
@@ -25,6 +26,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SVGCode: typeof import('./src/components/layout/SVGCode.vue')['default']
+    TextareaCode: typeof import('./src/components/ui/TextareaCode.vue')['default']
     Toolbar: typeof import('./src/components/ui/Toolbar.vue')['default']
     Tools: typeof import('./src/components/layout/Tools.vue')['default']
   }

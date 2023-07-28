@@ -9,6 +9,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import cesium from 'vite-plugin-cesium'
+import prismjs from 'vite-plugin-prismjs'
 
 export default defineConfig({
   resolve: {
@@ -33,6 +34,11 @@ export default defineConfig({
           },
         }),
       },
+    }),
+    prismjs({
+      languages: ['css'],
+      plugins: ['copy-to-clipboard'], // 配置显示行号插件
+      css: true,
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
