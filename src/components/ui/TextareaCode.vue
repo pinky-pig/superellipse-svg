@@ -31,7 +31,7 @@ async function handleCopy() {
 <template>
   <div class="text-[#A4B2C1]">
     <div class="relative flex flex-row items-center justify-between pr-10px">
-      <span class="h-12 font-bold leading-12">
+      <span class="h-12 select-none font-bold leading-12">
         {{ title }}
       </span>
 
@@ -63,7 +63,7 @@ async function handleCopy() {
         </g>
       </svg>
 
-      <div v-if="hasCopy" class="up-up absolute right-2px text-[12px] -top-5px">
+      <div v-if="hasCopy" class="up-up absolute right-2px select-none text-[12px] -top-5px">
         已拷贝
       </div>
     </div>
