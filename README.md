@@ -16,7 +16,7 @@
 - [√] SVG code
 - [√] 导出 SVG
 - [√] 彩带效果
-- [×] CSS Background Code
+- [√] CSS Background Code
 
 ## Points
 
@@ -24,6 +24,8 @@
 
 2. 设置都是针对 SVG 的属性设置
 
-3. 小彩蛋，按空格键更换背景（ 自己之前写的 [random-bg](https://github.com/pinky-pig/what-is-my-random-bg) ）
+3. 直接复制用到 background-image 的 CSS 代码，就是将 SVG 代码转换成 base64 编码
 
-4. 彩带效果 [canvas-confetti](https://github.com/catdad/canvas-confetti)
+4. 小彩蛋，按空格键更换背景（ 自己之前写的 [random-bg](https://github.com/pinky-pig/what-is-my-random-bg) ）
+
+5. 彩带效果 [canvas-confetti](https://github.com/catdad/canvas-confetti)
