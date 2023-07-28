@@ -30,7 +30,7 @@ async function handleCopy() {
 
 <template>
   <div class="text-[#A4B2C1]">
-    <div class="flex flex-row items-center justify-between pr-10px">
+    <div class="relative flex flex-row items-center justify-between pr-10px">
       <span class="h-12 font-bold leading-12">
         {{ title }}
       </span>
@@ -62,6 +62,10 @@ async function handleCopy() {
           <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
         </g>
       </svg>
+
+      <div v-if="hasCopy" class="up-up absolute right-2px text-[12px] -top-5px">
+        已拷贝
+      </div>
     </div>
     <div class="h-180px rounded-[0.8rem]">
       <textarea
@@ -73,5 +77,17 @@ async function handleCopy() {
 </template>
 
 <style scoped>
-
+.up-up {
+  animation: riseAnimation .3s both;
+}
+@keyframes riseAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50%)
+  }
+  100% {
+    opacity: 1;
+    transform: none
+  }
+}
 </style>

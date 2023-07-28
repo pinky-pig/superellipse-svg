@@ -65,7 +65,7 @@ defineExpose({
   pointer-events: auto;
   min-height: 300px;
   width: 550px;
-  height: 640px;
+  height: 620px;
   margin: 0 auto;
   padding: 4rem 2rem 2.5rem;
   overflow: hidden;
