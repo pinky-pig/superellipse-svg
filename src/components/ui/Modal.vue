@@ -64,13 +64,11 @@ defineExpose({
 .glass-modal{
   pointer-events: auto;
   min-height: 300px;
-  width: 75%;
-  max-width: 800px;
-  height: min(90vh,1000px);
+  width: 550px;
+  height: 640px;
   margin: 0 auto;
   padding: 4rem 2rem 2.5rem;
   overflow: hidden;
-  /* height: auto; */
   border-radius: 20px;
   background-color: rgba(37, 42, 49, 1);
   backdrop-filter: blur(40px);

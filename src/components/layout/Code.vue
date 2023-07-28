@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Modal from '~/components/ui/Modal.vue'
 
-// import { getResults } from '~/utils/encodeSvg'
+import { getResults } from '~/utils/encodeSvg'
 import { getSVGCode } from '~/utils/svg'
 
 const $modal = ref<typeof Modal | null>(null)
@@ -17,33 +17,42 @@ defineExpose({
   open,
 })
 
-const code = ref('')
-const backgroundImage = ref('unset')
+const cssStyle = ref('unset')
+const encoded = ref('')
 function render() {
-  code.value = getSVGCode('superellipse')
+  const svgCode = getSVGCode('superellipse')
 
-  // backgroundImage.value = getResults(code.value).resultCss
-  // console.log(backgroundImage.value)
+  const result = getResults(svgCode)
+  cssStyle.value = result.resultCss
+  encoded.value = result.encoded
 }
 </script>
 
 <template>
   <Modal ref="$modal">
-    <div class="px-4">
+    <div class="px-2 md:px-4">
       <div class="flex flex-row items-center justify-between">
-        <span class="h-16 font-bold leading-16 text-[#A4B2C1]">SVG Code</span>
+        <span class="h-12 font-bold leading-12 text-[#A4B2C1]">SVG Code</span>
         <div class="cursor-pointer font-bold text-[#A4B2C1] hover:bg-white" i-carbon-close @click="close" />
       </div>
 
       <div
-        class="preview-demo h-150px bg-no-repeat"
-        :style="{ backgroundImage: `${backgroundImage}` }"
-      >
-        Superellipse
+        class="preview-demo h-80px bg-no-repeat"
+        :style="cssStyle"
+      />
+
+      <div>
+        <span class="h-12 font-bold leading-12 text-[#A4B2C1]">CSS</span>
+        <div class="h-180px overflow-auto rounded-[0.8rem] bg-[#1d2026] text-[#A4B2C1]">
+          {{ cssStyle }}
+        </div>
       </div>
 
-      <div class="h-full overflow-auto rounded-[0.8rem] bg-[#1d2026] py-4 text-[#A4B2C1]">
-        {{ code }}
+      <div>
+        <span class="h-12 font-bold leading-12 text-[#A4B2C1]">encoded</span>
+        <div class="h-180px overflow-auto rounded-[0.8rem] bg-[#1d2026] text-[#A4B2C1]">
+          {{ encoded }}
+        </div>
       </div>
     </div>
   </Modal>

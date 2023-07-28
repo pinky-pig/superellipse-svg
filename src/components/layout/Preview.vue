@@ -25,6 +25,9 @@ watch([currentCurvatureX, currentCurvatureY], async () => {
   svgViewbox.value = getViewbox($path.value!)
 })
 
+watch(currentRotate, () => {
+  svgViewbox.value = getViewbox($path.value!)
+})
 function getViewbox(path: SVGPathElement) {
   const bbox = path.getBBox()
   return {
@@ -34,6 +37,7 @@ function getViewbox(path: SVGPathElement) {
     height: bbox.height,
   }
 }
+
 async function getSuperellipsePath(
   a = 50, // X 轴半径
   b = 50, // Y 轴半径
@@ -59,6 +63,7 @@ async function getSuperellipsePath(
 <template>
   <svg
     id="superellipse"
+    ref="$path"
     :viewBox="`${svgViewbox.x} ${svgViewbox.y} ${svgViewbox.width} ${svgViewbox.height}`"
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
@@ -68,7 +73,6 @@ async function getSuperellipsePath(
     }"
   >
     <path
-      ref="$path"
       :d="pathString"
       :stroke="currentStrokeColor"
       :fill="currentFillColor"

@@ -1,14 +1,11 @@
 // https://yoksel.github.io/url-encoder/
 
 export function getResults(initTextarea: string) {
-  if (!initTextarea)
-    return
-
   const namespaced = addNameSpace(initTextarea)
   const escaped = encodeSVG(namespaced)
   const quotes = getQuotes()
 
-  const resultCss = `url(${quotes.level1}data:image/svg+xml,${escaped}${quotes.level1});`
+  const resultCss = `background-image: url(${quotes.level1}data:image/svg+xml,${escaped}${quotes.level1});`
 
   return {
     encoded: escaped, // 转化
