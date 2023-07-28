@@ -59,7 +59,7 @@ function previewCSS() {
       <div class="main-content-layout flex flex-1">
         <div class="flex flex-1 flex-col items-center justify-center">
           <Preview
-            class="h-280px w-280px flex-shrink-0"
+            class="h-336px w-336px flex-shrink-0"
           />
           <Tools
             class="mt-2rem md:mt-5rem"
