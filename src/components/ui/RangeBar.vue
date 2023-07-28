@@ -61,13 +61,13 @@ input[type="range"]::-webkit-slider-thumb {
     0 3px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   -webkit-appearance: none;
-  outline: 0 solid #6967fe90;
-  transition: outline .2s ease-out;
+  box-shadow: 0 0 0 0px #6967fe90;
+  transition: box-shadow .2s ease-out;
 }
 input[type="range"]::-webkit-slider-thumb:hover{
-  outline: 4px solid #6967fe90;
+  box-shadow: 0 0 0 4px #6967fe90;
 }
 input[type="range"]:focus::-webkit-slider-thumb {
-  outline: 4px solid #6967fe90;
+  box-shadow: 0 0 0 4px #6967fe90;
 }
 </style>
