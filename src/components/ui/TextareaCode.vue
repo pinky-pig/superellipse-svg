@@ -69,6 +69,7 @@ async function handleCopy() {
     </div>
     <div class="h-180px rounded-[0.8rem]">
       <textarea
+        :readonly="true"
         class="h-180px w-full resize-none rounded-md bg-[#1d2026] p-2 outline-none"
         :value="code"
       />
