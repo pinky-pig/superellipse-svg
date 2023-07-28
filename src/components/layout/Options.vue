@@ -10,10 +10,23 @@ const strokePresetColor = ['#fff', '#CAE7B9', '#f3de8a', '#eb9486', '#7e7f9a', '
 const fillPresetColor = ['#fff', '#e7e6f7', '#e3d0d8', '#aea3b0', '#827081', '#c6d2ed', '#F4E8C100', '#000000']
 
 const isLockedXY = ref(true)
-const curvature = ref(currentCurvatureX)
+const curvature = ref(currentCurvatureX.value)
+
 watch(curvature, () => {
   currentCurvatureX.value = curvature.value
   currentCurvatureY.value = curvature.value
+})
+
+watch(isLockedXY, (v) => {
+  if (v) {
+    // 说明当前锁住，需要同步 X Y
+    curvature.value = currentCurvatureX.value
+  }
+  else {
+    // 说明当前解锁，需要同步 X Y
+    currentCurvatureX.value = curvature.value
+    currentCurvatureY.value = curvature.value
+  }
 })
 </script>
 
