@@ -36,10 +36,16 @@ function render() {
         <div class="cursor-pointer font-bold text-[#A4B2C1] hover:bg-white" i-carbon-close @click="close" />
       </div>
 
-      <div
-        class="preview-demo h-80px bg-no-repeat"
-        :style="cssStyle"
-      />
+      <div>
+        <div
+          class="preview-demo h-80px bg-no-repeat"
+          :style="cssStyle"
+        />
+
+        <!-- <span class="select-none text-[12px] text-[#A4B2C1]">
+          这里 SVG 的 viewbox 为了解决 rotate 可能会显示不全 ，多设了 10 ，可自行修改
+        </span> -->
+      </div>
 
       <TextareaCode
         title="CSS"

@@ -31,10 +31,10 @@ watch(currentRotate, () => {
 function getViewbox(path: SVGPathElement) {
   const bbox = path.getBBox()
   return {
-    x: bbox.x,
-    y: bbox.y,
-    width: bbox.width,
-    height: bbox.height,
+    x: bbox.x - 10,
+    y: bbox.y - 10,
+    width: bbox.width + 20,
+    height: bbox.height + 20,
   }
 }
 
