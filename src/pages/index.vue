@@ -31,8 +31,8 @@ const throttledFn = useThrottleFn(async () => {
     await navigator.clipboard.writeText(code)
     showConfetti()
 
-    $Alert.value!.open()
     alertInfo.value = '已拷贝'
+    $Alert.value!.open()
   }
   catch (err) {
     alertInfo.value = '拷贝失败'
