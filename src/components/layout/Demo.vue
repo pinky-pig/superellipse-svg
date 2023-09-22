@@ -59,11 +59,14 @@ async function copyDemo(item: typeof svgFiles[0]) {
   <Modal ref="$modal">
     <div class="px-2 md:px-4">
       <div class="flex flex-row items-center justify-between">
-        <span class="h-12 font-bold leading-12 text-[#A4B2C1]">Demo</span>
+        <span class="h-12 flex flex-row font-bold leading-12 text-[#A4B2C1]">
+          Demo
+          <p class="text-8px leading-12">（点击图形自动粘贴到剪切板）</p>
+        </span>
         <div class="cursor-pointer font-bold text-[#A4B2C1] hover:bg-white" i-carbon-close @click="close" />
       </div>
 
-      <div class="grid grid-cols-4">
+      <div class="grid grid-cols-4 gap-y-4">
         <div
           v-for="(item, index) in svgFiles"
           :key="index"
