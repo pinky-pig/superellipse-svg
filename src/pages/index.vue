@@ -2,6 +2,7 @@
 import Code from '~/components/layout/Code.vue'
 import Demo from '~/components/layout/Demo.vue'
 import Alert from '~/components/ui/Alert.vue'
+import Background from '~/components/ui/Background.vue'
 import { showConfetti } from '~/utils/confetti'
 import { downloadSVG, getSVGCode } from '~/utils/svg'
 
@@ -53,10 +54,17 @@ const $Demo = ref<typeof Demo | null>(null)
 function previewDemo() {
   $Demo.value!.open()
 }
+
+// 点击 Preview 更换背景色
+const $background = ref<typeof Background | null>(null)
+function test() {
+  if ($background.value)
+    $background.value.isRerenderFlag = ($background.value.isRerenderFlag + 1) % 11
+}
 </script>
 
 <template>
-  <Background />
+  <Background ref="$background" />
   <ConfettiCanvas />
 
   <Suspense>
@@ -65,7 +73,8 @@ function previewDemo() {
       <div class="main-content-layout flex flex-1">
         <div class="flex flex-1 flex-col items-center justify-center">
           <Preview
-            class="h-336px w-336px flex-shrink-0"
+            class="h-336px w-336px flex-shrink-0 cursor-pointer"
+            @click="test"
           />
           <Tools
             class="mt-2rem md:mt-5rem"

@@ -27,6 +27,9 @@ function printf(e: any) {
   // console.log(e.detail, '重新渲染后的数据')
 }
 
+defineExpose({
+  isRerenderFlag,
+})
 onMounted(() => {
   document.addEventListener('keydown', (event) => {
     if (event.key === ' ')
