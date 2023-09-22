@@ -37,7 +37,7 @@ async function getAllSvgRaw() {
   return posts
 }
 
-async function copyDemo(item: typeof svgFiles[0]) {
+const throttledFn = useThrottleFn(async (item) => {
   try {
     await navigator.clipboard.writeText(item.raw)
 
@@ -48,6 +48,10 @@ async function copyDemo(item: typeof svgFiles[0]) {
     alertInfo.value = '拷贝失败'
     console.error('复制失败：', err)
   }
+}, 2000)
+
+async function copyDemo(item: typeof svgFiles[0]) {
+  throttledFn(item)
 }
 </script>
 

@@ -26,9 +26,6 @@ function exportSvg() {
 const $Alert = ref<typeof Alert | null>(null)
 const alertInfo = ref('')
 
-provide('alertInfo', alertInfo)
-provide('$Alert', $Alert)
-
 const throttledFn = useThrottleFn(async () => {
   const code = getSVGCode('superellipse')
 
