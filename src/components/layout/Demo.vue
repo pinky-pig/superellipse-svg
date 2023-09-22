@@ -64,14 +64,14 @@ async function copyDemo(item: typeof svgFiles[0]) {
       </div>
 
       <div class="grid grid-cols-4">
-        <img
+        <div
           v-for="(item, index) in svgFiles"
           :key="index"
-          :src="item.path"
           :alt="item.path"
           class="mx-auto h-80px w-80px cursor-pointer bg-no-repeat"
           @click="copyDemo(item)"
-        >
+          v-html="item.raw"
+        />
       </div>
     </div>
     <Alert ref="$Alert" :info="alertInfo" />
