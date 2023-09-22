@@ -72,10 +72,11 @@ function test() {
       <Header />
       <div class="main-content-layout flex flex-1">
         <div class="flex flex-1 flex-col items-center justify-center">
-          <Preview
+          <div
             class="h-336px w-336px flex-shrink-0 cursor-pointer"
-            @click="test"
-          />
+          >
+            <Preview @click="test" />
+          </div>
           <Tools
             class="mt-2rem md:mt-5rem"
             @export-svg="exportSvg"
