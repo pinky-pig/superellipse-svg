@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Code from '~/components/layout/Code.vue'
+import Demo from '~/components/layout/Demo.vue'
 import Alert from '~/components/ui/Alert.vue'
 import { showConfetti } from '~/utils/confetti'
 import { downloadSVG, getSVGCode } from '~/utils/svg'
@@ -24,6 +25,10 @@ function exportSvg() {
 
 const $Alert = ref<typeof Alert | null>(null)
 const alertInfo = ref('')
+
+provide('alertInfo', alertInfo)
+provide('$Alert', $Alert)
+
 const throttledFn = useThrottleFn(async () => {
   const code = getSVGCode('superellipse')
 
@@ -31,7 +36,7 @@ const throttledFn = useThrottleFn(async () => {
     await navigator.clipboard.writeText(code)
     showConfetti()
 
-    alertInfo.value = '已拷贝'
+    alertInfo.value = '已拷贝到剪切板'
     $Alert.value!.open()
   }
   catch (err) {
@@ -46,6 +51,10 @@ async function copySVG() {
 const $Code = ref<typeof Code | null>(null)
 function previewCSS() {
   $Code.value!.open()
+}
+const $Demo = ref<typeof Demo | null>(null)
+function previewDemo() {
+  $Demo.value!.open()
 }
 </script>
 
@@ -66,6 +75,7 @@ function previewCSS() {
             @export-svg="exportSvg"
             @copy-svg="copySVG"
             @preview-css="previewCSS"
+            @preview-demo="previewDemo"
           />
         </div>
         <div class="p-4">
@@ -75,6 +85,7 @@ function previewCSS() {
     </div>
   </Suspense>
 
+  <Demo ref="$Demo" />
   <Code ref="$Code" />
   <Alert ref="$Alert" :info="alertInfo" />
 </template>

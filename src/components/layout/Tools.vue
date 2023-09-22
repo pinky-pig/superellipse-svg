@@ -3,11 +3,12 @@ const emit = defineEmits([
   'export-svg',
   'copy-svg',
   'preview-css',
+  'preview-demo',
 ])
 
 interface IBtn {
   label: string
-  emit: 'export-svg' | 'copy-svg' | 'preview-css'
+  emit: 'export-svg' | 'copy-svg' | 'preview-css' | 'preview-demo'
 }
 const btns = ref<IBtn[]>([
   {
@@ -22,11 +23,15 @@ const btns = ref<IBtn[]>([
     label: '预览 CSS',
     emit: 'preview-css',
   },
+  {
+    label: 'Demo',
+    emit: 'preview-demo',
+  },
 ])
 </script>
 
 <template>
-  <div class="h-80px w-full flex flex-row items-center justify-center gap-4 text-14px">
+  <div class="mb-4 h-80px w-full flex flex-row flex-wrap items-center justify-center gap-4 text-14px">
     <div v-for="(item, index) in btns" :key="index">
       <button
         class="btn"
