@@ -68,7 +68,7 @@ function test() {
   <ConfettiCanvas />
 
   <Suspense>
-    <div class="fixed bottom-0 left-0 right-0 top-0 h-full w-full flex flex-col overflow-auto">
+    <div class="fixed bottom-0 left-0 right-0 top-0 h-full w-full flex flex-col overflow-x-hidden overflow-y-auto">
       <Header />
       <div class="main-content-layout flex flex-1">
         <div class="flex flex-1 flex-col items-center justify-center">
@@ -89,6 +89,11 @@ function test() {
           <Options />
         </div>
       </div>
+
+      <div class="footer fixed bottom-0 w-screen flex flex-row">
+        <Footer class="flex-1" />
+        <div class="footer-placeholder h-2 w-352px flex-shrink-0 flex-grow-0" />
+      </div>
     </div>
   </Suspense>
 
@@ -106,5 +111,13 @@ function test() {
     flex-direction: column;
     align-items: center;
   }
+  .footer{
+    position: unset;
+  }
+  .footer .footer-placeholder{
+    height: 0 !important;
+    width: 0 !important;
+  }
+
 }
 </style>

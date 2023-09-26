@@ -17,6 +17,7 @@ declare module 'vue' {
     copy: typeof import('./src/components/layout/Code copy.vue')['default']
     CSidebar: typeof import('./src/components/ui/CSidebar.vue')['default']
     Demo: typeof import('./src/components/layout/Demo.vue')['default']
+    Footer: typeof import('./src/components/layout/Footer.vue')['default']
     GeneratorBySVG: typeof import('./src/components/GeneratorBySVG.vue')['default']
     Header: typeof import('./src/components/layout/Header.vue')['default']
     HighlightCode: typeof import('./src/components/ui/HighlightCode.vue')['default']
