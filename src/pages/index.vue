@@ -5,6 +5,7 @@ import Alert from '~/components/ui/Alert.vue'
 import Background from '~/components/ui/Background.vue'
 import { showConfetti } from '~/utils/confetti'
 import { downloadSVG, getSVGCode } from '~/utils/svg'
+import { t } from '~/i18n'
 
 const currentStrokeColor = ref('#7e7f9a')
 const currentFillColor = ref('#7e7f9a')
@@ -34,11 +35,11 @@ const throttledFn = useThrottleFn(async () => {
     await navigator.clipboard.writeText(code)
     showConfetti()
 
-    alertInfo.value = '已拷贝到剪切板'
+    alertInfo.value = t('other.alertTextSuccess')
     $Alert.value!.open()
   }
   catch (err) {
-    alertInfo.value = '拷贝失败'
+    alertInfo.value = t('other.alertTextFailed')
     console.error('复制失败：', err)
   }
 }, 3000)

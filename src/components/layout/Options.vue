@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { t } from '~/i18n'
+
 const currentStrokeColor = inject('currentStrokeColor') as Ref<string>
 const currentFillColor = inject('currentFillColor') as Ref<string>
 const currentCurvatureX = inject('currentCurvatureX') as Ref<number>
@@ -40,7 +42,9 @@ watch(isLockedXY, (v) => {
         :step="0.01"
       >
         <template #title>
-          <span class="mb-.25rem select-none text-16px font-bold">曲率</span>
+          <span class="mb-.25rem select-none text-16px font-bold">
+            {{ t('option.curvature') }}
+          </span>
         </template>
       </RangeBar>
     </div>
@@ -53,7 +57,9 @@ watch(isLockedXY, (v) => {
         :step="0.01"
       >
         <template #title>
-          <span class="mb-.25rem select-none text-16px font-bold">曲率 X</span>
+          <span class="mb-.25rem select-none text-16px font-bold">
+            {{ t('option.curvatureX') }}
+          </span>
         </template>
       </RangeBar>
     </div>
@@ -65,7 +71,9 @@ watch(isLockedXY, (v) => {
         :step="0.01"
       >
         <template #title>
-          <span class="mb-.25rem select-none text-16px font-bold">曲率 Y</span>
+          <span class="mb-.25rem select-none text-16px font-bold">
+            {{ t('option.curvatureY') }}
+          </span>
         </template>
       </RangeBar>
     </div>
@@ -78,14 +86,18 @@ watch(isLockedXY, (v) => {
     </div>
 
     <div>
-      <span class="mb-.25rem block text-16px font-bold">描边</span>
+      <span class="mb-.25rem block text-16px font-bold">
+        {{ t('option.stroke') }}
+      </span>
       <ColorPicker
         v-model:current-color="currentStrokeColor"
         :preset-color="strokePresetColor"
       />
     </div>
     <div>
-      <span class="mb-.25rem block text-16px font-bold">背景</span>
+      <span class="mb-.25rem block text-16px font-bold">
+        {{ t('option.fill') }}
+      </span>
       <ColorPicker
         v-model:current-color="currentFillColor"
         :preset-color="fillPresetColor"
@@ -99,7 +111,9 @@ watch(isLockedXY, (v) => {
         :step="0.1"
       >
         <template #title>
-          <span class="mb-.25rem select-none text-16px font-bold">描边宽度</span>
+          <span class="mb-.25rem select-none text-16px font-bold">
+            {{ t('option.strokeWidth') }}
+          </span>
         </template>
       </RangeBar>
     </div>
@@ -111,7 +125,9 @@ watch(isLockedXY, (v) => {
         :step="1"
       >
         <template #title>
-          <span class="mb-.25rem select-none text-16px font-bold">旋转角度</span>
+          <span class="mb-.25rem select-none text-16px font-bold">
+            {{ t('option.rotate') }}
+          </span>
         </template>
       </RangeBar>
     </div>

@@ -31,7 +31,7 @@ defineExpose({
 
 <template>
   <div v-if="visible" class="alert-container scale-up-center pointer-events-none fixed bottom-0 left-0 right-0 top-0 h-full w-full flex items-center justify-center">
-    <div class="h-64px w-200px flex flex-row items-center justify-center gap-2 rounded-md bg-white">
+    <div class="h-64px w-fit flex flex-row items-center justify-center gap-2 rounded-md bg-white px-10px">
       <div i-fluent-emoji:check-mark />
       <span class="font-bold text-black">{{ info }}</span>
     </div>

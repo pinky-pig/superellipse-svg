@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { t } from '~/i18n'
+
 const emit = defineEmits([
   'export-svg',
   'copy-svg',
@@ -10,21 +12,21 @@ interface IBtn {
   label: string
   emit: 'export-svg' | 'copy-svg' | 'preview-css' | 'preview-demo'
 }
-const btns = ref<IBtn[]>([
+const btns = computed<IBtn[]>(() => [
   {
-    label: '导出 SVG',
+    label: t('tool.export'),
     emit: 'export-svg',
   },
   {
-    label: '拷贝 SVG',
+    label: t('tool.copy'),
     emit: 'copy-svg',
   },
   {
-    label: '预览 CSS',
+    label: t('tool.preview'),
     emit: 'preview-css',
   },
   {
-    label: 'Demo',
+    label: t('tool.demo'),
     emit: 'preview-demo',
   },
 ])

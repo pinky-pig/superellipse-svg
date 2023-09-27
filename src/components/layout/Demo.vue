@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Modal from '~/components/ui/Modal.vue'
 import Alert from '~/components/ui/Alert.vue'
+import { t } from '~/i18n'
 
 const alertInfo = ref('')
 const $Alert = ref<typeof Alert | null>(null)
@@ -41,11 +42,11 @@ const throttledFn = useThrottleFn(async (item) => {
   try {
     await navigator.clipboard.writeText(item.raw)
 
-    alertInfo.value = '已拷贝到剪切板'
+    alertInfo.value = t('other.alertTextSuccess')
     $Alert.value!.open()
   }
   catch (err) {
-    alertInfo.value = '拷贝失败'
+    alertInfo.value = t('other.alertTextFailed')
     console.error('复制失败：', err)
   }
 }, 2000)
@@ -60,8 +61,10 @@ async function copyDemo(item: typeof svgFiles[0]) {
     <div class="px-2 md:px-4">
       <div class="flex flex-row items-center justify-between">
         <span class="h-12 flex flex-row font-bold leading-12 text-[#A4B2C1]">
-          Demo
-          <p class="text-8px leading-12">（点击图形自动粘贴到剪切板）</p>
+          {{ t('other.demoTitle') }}
+          <p class="text-8px leading-12">
+            &nbsp;{{ t('other.demoText') }}
+          </p>
         </span>
         <div class="cursor-pointer font-bold text-[#A4B2C1] hover:bg-white" i-carbon-close @click="close" />
       </div>
