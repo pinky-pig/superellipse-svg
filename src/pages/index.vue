@@ -57,7 +57,7 @@ function previewDemo() {
 
 // 点击 Preview 更换背景色
 const $background = ref<typeof Background | null>(null)
-function test() {
+function handleChangeBg() {
   if ($background.value)
     $background.value.isRerenderFlag = ($background.value.isRerenderFlag + 1) % 11
 }
@@ -75,7 +75,7 @@ function test() {
           <div
             class="h-336px w-336px flex-shrink-0 cursor-pointer"
           >
-            <Preview @click="test" />
+            <Preview @click="handleChangeBg" />
           </div>
           <Tools
             class="mt-2rem md:mt-5rem"
