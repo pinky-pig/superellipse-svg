@@ -14,9 +14,9 @@ export function showConfetti() {
 
     const duration = performance.now() + 1 * 1000
 
-    const confettiColors = ['#6967fe', '#85e9f4', '#e16984']
+    const confettiColors = ['#6967fe', '#85e9f4', '#e16984'];
 
-    void (function frame() {
+    (function frame() {
       myConfetti({
         particleCount: confettiColors.length,
         angle: 60,

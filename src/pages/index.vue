@@ -56,15 +56,15 @@ function previewDemo() {
 }
 
 // 点击 Preview 更换背景色
-const $background = ref<typeof Background | null>(null)
+
+const isRerenderFlag = ref(0)
 function handleChangeBg() {
-  if ($background.value)
-    $background.value.isRerenderFlag = ($background.value.isRerenderFlag + 1) % 11
+  isRerenderFlag.value = (isRerenderFlag.value + 1) % 11
 }
 </script>
 
 <template>
-  <Background ref="$background" />
+  <Background v-model="isRerenderFlag" />
   <ConfettiCanvas />
 
   <Suspense>
@@ -90,10 +90,10 @@ function handleChangeBg() {
         </div>
       </div>
 
-      <div class="footer fixed bottom-0 w-screen flex flex-row">
+      <!-- <div class="footer fixed bottom-0 w-screen flex flex-row">
         <Footer class="flex-1" />
         <div class="footer-placeholder h-2 w-352px flex-shrink-0 flex-grow-0" />
-      </div>
+      </div> -->
     </div>
   </Suspense>
 

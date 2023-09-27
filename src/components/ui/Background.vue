@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import '~/utils/RandomBg'
 
 // 随机色色板
@@ -22,14 +21,15 @@ const initial = [
 ]
 
 // 只要改变这个值，就会触发重新渲染
-const isRerenderFlag = ref(0)
-function printf(e: any) {
+
+const isRerenderFlag = defineModel<number>({
+  default: 0,
+})
+
+function printf(_e: any) {
   // console.log(e.detail, '重新渲染后的数据')
 }
 
-defineExpose({
-  isRerenderFlag,
-})
 onMounted(() => {
   document.addEventListener('keydown', (event) => {
     if (event.key === ' ')

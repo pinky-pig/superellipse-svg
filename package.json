@@ -9,6 +9,7 @@
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "test": "vitest",
+    "test:e2e": "cypress open",
     "up": "taze major -I",
     "postinstall": "npx simple-git-hooks"
   },
@@ -20,7 +21,7 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^1.0.0-beta.6",
+    "@antfu/eslint-config": "0.39.5",
     "@iconify-json/carbon": "^1.1.21",
     "@iconify-json/fluent-emoji": "^1.1.13",
     "@types/canvas-confetti": "^1.6.0",
@@ -30,10 +31,14 @@
     "@unocss/eslint-plugin": "^0.56.1",
     "@unocss/reset": "^0.56.1",
     "@vitejs/plugin-vue": "^4.3.4",
+    "@vitest/ui": "^0.34.4",
     "@vue-macros/volar": "^0.14.3",
     "@vue/test-utils": "^2.4.1",
-    "eslint": "^8.50.0",
+    "cypress": "^13.2.0",
+    "cypress-vite": "^1.4.2",
+    "eslint": "^8.42.0",
     "eslint-define-config": "^1.23.0",
+    "eslint-plugin-cypress": "^2.15.1",
     "jsdom": "^22.1.0",
     "lint-staged": "^14.0.1",
     "pnpm": "^8.7.6",
