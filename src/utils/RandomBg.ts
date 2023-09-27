@@ -89,7 +89,7 @@ export function generateRandomBg() {
     constructor() {
       super()
       this.shadow = this.attachShadow({
-        mode: 'closed',
+        mode: 'open',
       })
       this.render()
     }
