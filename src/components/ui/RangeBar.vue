@@ -52,22 +52,23 @@ watch(value, (val) => {
   height: 3px;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
   background-color: #6967fe;
-  box-shadow: 0 0 2px rgba(61, 26, 26, 0.3),
+  box-shadow:
+    0 0 2px rgba(61, 26, 26, 0.3),
     0 3px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   -webkit-appearance: none;
   box-shadow: 0 0 0 0px #6967fe90;
-  transition: box-shadow .2s ease-out;
+  transition: box-shadow 0.2s ease-out;
 }
-input[type="range"]::-webkit-slider-thumb:hover{
+input[type='range']::-webkit-slider-thumb:hover {
   box-shadow: 0 0 0 4px #6967fe90;
 }
-input[type="range"]:focus::-webkit-slider-thumb {
+input[type='range']:focus::-webkit-slider-thumb {
   box-shadow: 0 0 0 4px #6967fe90;
 }
 </style>
