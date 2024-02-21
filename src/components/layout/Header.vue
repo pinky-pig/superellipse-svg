@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { i18n } from '~/i18n'
+
+const { width } = useWindowSize()
 </script>
 
 <template>
@@ -7,7 +9,12 @@ import { i18n } from '~/i18n'
     id="nav-bg"
     class="z-2 h-80px h-fit w-full flex flex-row items-center justify-between px-3.5vw py-16px text-white"
   >
-    <MoneyCard align="right" rotate-mode="right" :align-offset="160" :top-offset="-190" />
+    <MoneyCard
+      align="right"
+      rotate-mode="right"
+      :align-offset="width > 625 ? 160 : 0"
+      :top-offset="width > 625 ? -190 : -220"
+    />
 
     <div class="flex flex-row items-center justify-center gap-20px">
       <img
