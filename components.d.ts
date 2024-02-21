@@ -18,6 +18,7 @@ declare module 'vue' {
     Header: typeof import('./src/components/layout/Header.vue')['default']
     HighlightCode: typeof import('./src/components/ui/HighlightCode.vue')['default']
     Modal: typeof import('./src/components/ui/Modal.vue')['default']
+    MoneyCard: typeof import('./src/components/ui/money-card/index.vue')['default']
     Options: typeof import('./src/components/layout/Options.vue')['default']
     Preview: typeof import('./src/components/layout/Preview.vue')['default']
     RangeBar: typeof import('./src/components/ui/RangeBar.vue')['default']
