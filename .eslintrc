@@ -2,5 +2,9 @@
   "extends": [
     "@antfu",
     "@unocss"
-  ]
+  ],
+  "rules": {
+    // 禁用 no-binary 规则
+    "no-binary": "off"
+  }
 }
