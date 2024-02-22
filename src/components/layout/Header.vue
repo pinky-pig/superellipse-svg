@@ -27,7 +27,10 @@ const { width } = useWindowSize()
       </span>
     </div>
 
-    <div class="grid grid-cols-2 h-40px w-40px select-none place-items-center gap-8">
+    <div class="grid grid-cols-3 h-40px w-fit select-none place-items-center gap-4">
+      <a href="https://encodesvg.mmeme.me/" target="_blank">
+        <div i-carbon-svg class="h-24px w-24px" />
+      </a>
       <a href="https://github.com/pinky-pig/superellipse-svg" target="_blank">
         <div i-carbon-logo-github class="h-24px w-24px" />
       </a>
@@ -50,6 +53,6 @@ const { width } = useWindowSize()
 
 <style scoped>
 #nav-bg {
-  will-change: opacity,transform;
+  will-change: opacity, transform;
 }
 </style>
